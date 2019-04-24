@@ -1,0 +1,49 @@
+<div class="main-app-grid">
+    <div class="main-header">
+        Header
+    </div>
+    <div class="main-content">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Last</th>
+                    <th scope="col">Email</th>
+                    <th>
+                        <button (click)="addRow()" type="button" class="btn btn-info">+</button>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let row of contacts; let i = index">
+                    <th scope="row">
+                        <input [(ngModel)]="row.ID" type="text" class="form-control" id="basic-url"
+                            aria-describedby="basic-addon3">
+                    </th>
+                    <td>
+                        <input [(ngModel)]="row.first_name" type="text" class="form-control" id="basic-url"
+                            aria-describedby="basic-addon3">
+                    </td>
+                    <td>
+                        <input [(ngModel)]="row.last_name" type="text" class="form-control" id="basic-url"
+                            aria-describedby="basic-addon3">
+                    </td>
+                    <td>
+                        <input [(ngModel)]="row.email" type="text" class="form-control" id="basic-url"
+                            aria-describedby="basic-addon3">
+                    </td>
+                    <td>
+                        <div class="btn-group">
+                            <button (click)="save(row)" type="button" class="btn btn-success">Save</button>
+                            <button (click)="delete(i)" type="button" class="btn btn-danger">X</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="main-footer">
+        Footer
+    </div>
+</div>
